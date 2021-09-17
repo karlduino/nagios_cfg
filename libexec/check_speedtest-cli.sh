@@ -306,7 +306,13 @@ elif [ "$Loc" == "i" ]; then
 	if [ "$debug" == "TRUE" ]; then
 		echo "Internal Server defined"
 	fi
-	command=$($STb/speedtest --mini=$SEs --simple)
+
+	server_list=$($STb/speedtest --list)
+	server=${server_list:42:5}
+	server=${server/)/ }
+
+#	command=$($STb/speedtest --mini=$SEs --simple)
+	command=$($STb/speedtest --mini=$server --simple)
 else
 	if [ "$debug" == "TRUE" ]; then
 		echo "We should never get here as we checked the contents of Location variable earlier!"
