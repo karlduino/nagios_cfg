@@ -307,8 +307,7 @@ if [ "$Loc" == "e" ]; then
 	server=${server_list:42:5}
 	server=${server/)/ }
 
-#	command=$($STb/speedtest --server=$SEs --simple)
-	command=$($STb/speedtest --server=$server --simple)
+	command=$($STb/speedtest --server $server --simple)
 elif [ "$Loc" == "i" ]; then
 	if [ "$debug" == "TRUE" ]; then
 		echo "Internal Server defined"
