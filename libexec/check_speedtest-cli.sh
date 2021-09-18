@@ -301,18 +301,20 @@ if [ "$Loc" == "e" ]; then
 	if [ "$debug" == "TRUE" ]; then
 		echo "External Server defined"
 	fi
-	command=$($STb/speedtest --server=$SEs --simple)
+
+# use --list to find server
+	server_list=$($STb/speedtest --list)
+	server=${server_list:42:5}
+	server=${server/)/ }
+
+#	command=$($STb/speedtest --server=$SEs --simple)
+	command=$($STb/speedtest --server=$server --simple)
 elif [ "$Loc" == "i" ]; then
 	if [ "$debug" == "TRUE" ]; then
 		echo "Internal Server defined"
 	fi
 
-	server_list=$($STb/speedtest --list)
-	server=${server_list:42:5}
-	server=${server/)/ }
-
-#	command=$($STb/speedtest --mini=$SEs --simple)
-	command=$($STb/speedtest --mini=$server --simple)
+	command=$($STb/speedtest --mini=$SEs --simple)
 else
 	if [ "$debug" == "TRUE" ]; then
 		echo "We should never get here as we checked the contents of Location variable earlier!"
