@@ -10,3 +10,9 @@ Test the configuration with
 ```shell
 sudo /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
 ```
+
+Restart nagios using
+
+```shell
+/usr/local/nagios/bin/nagios -d /usr/local/nagios/etc/nagios.cfg
+```
