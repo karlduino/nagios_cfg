@@ -303,17 +303,17 @@ if [ "$Loc" == "e" ]; then
 	fi
 
 # use --list to find server
-	server_list=$($STb/speedtest --list)
+	server_list=$($STb/speedtest --secure --list)
 	server=${server_list:42:5}
 	server=${server/)/ }
 
-	command=$($STb/speedtest --server $server --simple)
+	command=$($STb/speedtest --secure --server $server --simple)
 elif [ "$Loc" == "i" ]; then
 	if [ "$debug" == "TRUE" ]; then
 		echo "Internal Server defined"
 	fi
 
-	command=$($STb/speedtest --mini=$SEs --simple)
+	command=$($STb/speedtest --secure --mini=$SEs --simple)
 else
 	if [ "$debug" == "TRUE" ]; then
 		echo "We should never get here as we checked the contents of Location variable earlier!"
