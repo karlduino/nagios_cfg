@@ -339,7 +339,7 @@ if [ "$debug" == "TRUE" ]; then
 fi
 
 if [ "$element_count" -ne "$expected_count" ]; then
-        echo "(element count: $element_count | expected count $expected_count) You do not have the expected number of indices in your output from SpeedTest. Is it correctly installed? Try running the check with the -V argument to see what is going wrong."
+        echo "(element count: $element_count, expected count $expected_count) You do not have the expected number of indices in your output from SpeedTest. Is it correctly installed? Try running the check with the -V argument to see what is going wrong."
 	usage
 	exit 3
 fi
