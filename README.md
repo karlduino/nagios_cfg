@@ -1,6 +1,7 @@
 Config files for Nagios for network monitoring
 
-config files stored in `/usr/local/nagios/etc/`
+config files stored in `/usr/local/nagios/etc/`; 
+files in `libexec/` stored in `/usr/local/nagios/libexec`
 
 - `libexec/check_speedtest-cli.sh` - modified version of the speedtest check script, to find local server
 - `libexec/run_speedtest.sh` - script to do test-run of check_speedtest-cli.sh
